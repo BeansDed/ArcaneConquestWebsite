@@ -1,0 +1,139 @@
+/* General Styles */
+body {
+    font-family: 'Garamond', serif; /* Keep the font for a medieval feel */
+    background-color: #1e1e1e; /* Dark background */
+    color: #e6d7a8; /* Light text color for contrast */
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    position: relative;
+    height: 100vh; /* Occupies the entire screen height */
+    text-align: center;
+    overflow: hidden;
+    background-color: rgba(30, 30, 30, 0.9); /* Dark overlay for the header */
+}
+
+.header-gif {
+    width: 100%;
+    height: 100%; /* Stretch the GIF to fill the header */
+    object-fit: cover; /* Ensures the GIF covers the entire area */
+}
+
+header h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    font-size: 64px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    color: #f9c600; /* Gold color for a regal look */
+}
+
+nav {
+    position: absolute;
+    bottom: 20px; /* Positioned at the bottom of the header */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #f9c600; /* Gold color for links */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #f9a602; /* Slightly lighter gold on hover */
+}
+
+/* Map Section */
+.map-section {
+    text-align: center;
+    margin: 20px;
+    background-color: rgba(50, 50, 50, 0.8); /* Darker background for the map section */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Spacing inside the section */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7); /* Dark shadow for depth */
+}
+
+.map-section h2 {
+    color: #f9c600; /* Gold for the heading */
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.map-section p {
+    color: #e6d7a8; /* Light color for the paragraph */
+    font-size: 18px;
+    margin-top: 15px;
+}
+
+.map-container {
+    position: relative;
+    overflow: hidden;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.map-image {
+    width: 100%; /* Makes the image responsive */
+    height: auto;
+    border-radius: 10px;
+    transform: scale(0.9); /* Zoom out */
+    transform-origin: center;
+    transition: transform 0.3s ease; /* Smooth scaling transition */
+}
+
+.map-image:hover {
+    transform: scale(1); /* Zoom in on hover */
+}
+
+/* Footer */
+footer {
+    background-color: rgba(30, 30, 30, 0.9); /* Dark footer */
+    text-align: center;
+    padding: 20px;
+    border-top: 2px solid #f9c600; /* Gold border on top of footer */
+}
+
+footer p {
+    margin: 0;
+    color: #e6d7a8; /* Light color for footer text */
+}
+
+/* Ensure footer is at the bottom */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 48px;
+    }
+    nav ul li {
+        margin: 0 10px;
+    }
+}

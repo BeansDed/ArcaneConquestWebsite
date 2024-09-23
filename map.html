@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map - Arcane Conquest</title>
+    <link rel="stylesheet" href="map.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Arcane Conquest Map</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="feature.html">Features</a></li>
+                    <li><a href="characters.html">Characters</a></li>
+                    <li><a href="map.html">Map</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section class="map-section">
+            <h2>Explore the World of Arcane Conquest!</h2>
+            <div class="map-container">
+                <img src="Map.png" alt="Map of Arcane Conquest" usemap="#mapareas" class="map-image">
+                <map name="mapareas">
+                    <area shape="rect" coords="34,44,270,350" alt="Forest" href="forest.html">
+                    <area shape="rect" coords="290,172,333,250" alt="Dark Forest" href="dark-forest.html">
+                    <area shape="rect" coords="337,300,500,450" alt="Dungeon" href="dungeon.html">
+                    <area shape="rect" coords="50,300,150,400" alt="Castle" href="castle.html">
+                </map>
+            </div>
+            <p>Click on different areas of the map to learn more about each location!</p>
+        </section>
+
+        <footer>
+            <p>&copy; 2024 Arcane Conquest. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

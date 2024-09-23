@@ -6,22 +6,29 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
+    font-family: 'Georgia', serif;
+    background-image: url('dark-stone-bg.jpg'); /* Replace with a dark textured background */
+    background-size: cover;
+    background-color: #1a1a1a;
+    color: #ddd;
     line-height: 1.6;
 }
 
 header {
-    background-color: #333;
-    color: #fff;
+    background-color: #2a2a2a;
+    color: #f0e68c;
     padding: 20px 0;
     text-align: center;
+    border-bottom: 5px solid #555;
 }
 
 header h1 {
-    font-size: 2.5rem;
+    font-family: 'Cinzel', serif;
+    font-size: 3rem;
     margin: 0;
+    letter-spacing: 2px;
+    color: #f9a602;
+    text-shadow: 2px 2px 4px #000;
 }
 
 nav ul {
@@ -35,29 +42,15 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #fff;
+    color: #f0e68c;
     text-decoration: none;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+    font-family: 'Uncial Antiqua', cursive;
     transition: color 0.3s;
 }
 
 nav ul li a:hover {
-    color: #f0a500;
-}
-
-/* Banner Section */
-.banner {
-    background: url('banner.jpg') no-repeat center center/cover;
-    color: white;
-    height: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.banner h2 {
-    font-size: 2.2rem;
-    text-shadow: 2px 2px 4px #000;
+    color: #f9a602;
 }
 
 /* Features Section */
@@ -66,51 +59,59 @@ nav ul li a:hover {
     max-width: 1200px;
     margin: 0 auto;
     text-align: center;
+    background-color: rgba(34, 34, 34, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    border: 1px solid #555;
 }
 
 .features h2 {
-    font-size: 2.2rem;
+    font-family: 'Cinzel', serif;
+    font-size: 2.5rem;
+    color: #f9a602;
     margin-bottom: 20px;
-    color: #333;
 }
 
 .features p {
-    font-size: 1.1rem;
-    color: #555;
+    font-size: 1.2rem;
+    color: #ccc;
     margin-bottom: 40px;
+    font-style: italic;
 }
 
 .feature {
-    background-color: white;
+    background-color: #2a2a2a;
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 15px;
     margin-bottom: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 2px solid #555;
 }
 
 .feature:hover {
     transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 1);
 }
 
 .feature h3 {
-    font-size: 1.5rem;
+    font-family: 'Cinzel', serif;
+    font-size: 1.8rem;
     margin-bottom: 10px;
-    color: #f0a500;
+    color: #f9a602;
+    text-shadow: 1px 1px 4px #000;
 }
 
 .feature p {
-    font-size: 1rem;
-    color: #666;
+    font-size: 1.1rem;
+    color: #ddd;
 }
 
 /* Footer */
 footer {
-    background-color: #333;
-    color: white;
+    background-color: #2a2a2a;
+    color: #f0e68c;
     text-align: center;
     padding: 10px 0;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+    border-top: 4px solid #555;
 }
