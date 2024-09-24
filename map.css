@@ -21,6 +21,11 @@ header {
     object-fit: cover; /* Ensures the GIF covers the entire area */
 }
 
+area:hover {
+    cursor: pointer;
+    outline: 2px solid #f9c600; /* Highlight the area on hover */
+}
+
 header h1 {
     position: absolute;
     top: 50%;
@@ -104,6 +109,85 @@ nav ul li a:hover {
     transform: scale(1); /* Zoom in on hover */
 }
 
+/* Buttons Section - Vertical Stack */
+.map-buttons {
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: flex-start; /* Align the buttons to the left */
+    gap: 30px;
+    margin-left: 30px; /* Add margin to move the container left */
+    margin-top: 20px;
+    margin-bottom: 30px;
+    width: 1000px;
+}
+
+
+.map-btn-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background-color: rgba(50, 50, 50, 0.9);
+    padding: 20px;
+    border-radius: 30px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    max-width: 350px;
+    width: 100%;
+}
+
+.map-btn-container:hover {
+    transform: scale(1.05);
+    background-color: rgba(70, 70, 70, 0.9);
+}
+
+.map-btn {
+    background-color: #f9c600;
+    border: 2px solid #f6b500;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.map-btn:hover {
+    background-color: #f6b500;
+    transform: scale(1.1);
+}
+
+.map-btn img {
+    width: 45px;
+    height: 45px;
+}
+
+.map-info {
+    color: #e6d7a8;
+}
+
+.map-info h3 {
+    margin: 0;
+    font-size: 20px;
+    color: #f9c600;
+    font-weight: bold;
+}
+
+.map-info p {
+    font-size: 14px;
+    margin-top: 5px;
+    color: #d3c89d;
+    line-height: 1.4;
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+    .map-btn-container {
+        max-width: 100%;
+    }
+}
+
+
 /* Footer */
 footer {
     background-color: rgba(30, 30, 30, 0.9); /* Dark footer */
@@ -129,11 +213,17 @@ html, body {
     min-height: 100vh;
 }
 
+/* Media Queries for Mobile */
 @media (max-width: 768px) {
     header h1 {
         font-size: 48px;
     }
     nav ul li {
         margin: 0 10px;
+    }
+
+    .map-buttons {
+        flex-direction: column; /* Stack buttons vertically on smaller screens */
+        align-items: center;
     }
 }
