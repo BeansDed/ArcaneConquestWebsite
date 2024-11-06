@@ -1,0 +1,144 @@
+/* General Styles */
+body {
+    font-family: 'Garamond', serif;
+    background-color: #121212;
+    color: #f0e68c;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header Styles */
+header {
+    background-color: rgba(30, 30, 30, 0.9);
+    text-align: center;
+    padding: 40px 0;
+    border-bottom: 2px solid #f9a602;
+}
+
+header h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 48px;
+    color: #f9a602;
+    margin: 0 0 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: #f0e68c;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #f9a602;
+}
+
+/* Main Content Styles */
+main {
+    flex-grow: 1;
+    padding: 40px 20px;
+}
+
+.developers {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.developer-card {
+    background-color: rgba(50, 50, 50, 0.8);
+    border: 2px solid #f9a602;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.developer-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(249, 166, 2, 0.3);
+}
+
+.developer-avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    border: 3px solid #f9a602;
+}
+
+.developer-card h2 {
+    font-family: 'Cinzel', serif;
+    color: #f9a602;
+    margin: 0 0 10px;
+}
+
+.developer-card .role {
+    color: #d4af37;
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.developer-card .bio {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-links a {
+    color: #f0e68c;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #f9a602;
+}
+
+/* Footer Styles */
+footer {
+    background-color: rgba(30, 30, 30, 0.9);
+    text-align: center;
+    padding: 20px;
+    border-top: 2px solid #f9a602;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 36px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .developers {
+        grid-template-columns: 1fr;
+    }
+}
