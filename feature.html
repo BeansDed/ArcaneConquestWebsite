@@ -1,63 +1,228 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Features - ArcaneConquest</title>
-        <link rel="stylesheet" href="feature.css">
-        <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Uncial+Antiqua&display=swap" rel="stylesheet">
-    </head>
-    <body>
-
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Features - ArcaneConquest</title>
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="feature.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- Particle effects background -->
+        <div class="particles"></div>
+        
+        <!-- Game UI Header -->
         <header>
-            <h1>ArcaneConquest</h1>
-            <nav>
+            <div class="header-overlay"></div>
+            <div class="logo-container">
+                <img src="Logo.png" alt="Arcane Conquest Logo" class="logo">
+            </div>
+            
+            <!-- Game HUD -->
+            <div class="game-hud">
+                <div class="player-level">
+                    <div class="level-icon">Lv.5</div>
+                    <div class="player-name">Adventurer</div>
+                </div>
+                <div class="resource-bars">
+                    <div class="health-bar">
+                        <div class="bar-label">HP</div>
+                        <div class="bar-container">
+                            <div class="bar-fill health-fill"></div>
+                        </div>
+                        <div class="bar-value">85/100</div>
+                    </div>
+                    <div class="mana-bar">
+                        <div class="bar-label">MP</div>
+                        <div class="bar-container">
+                            <div class="bar-fill mana-fill"></div>
+                        </div>
+                        <div class="bar-value">75/100</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Game Navigation -->
+            <nav class="game-nav">
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="feature.html">Features</a></li>
+                    <li class="active"><a href="feature.html">Features</a></li>
                     <li><a href="characters.html">Characters</a></li>
+                    <li><a href="map.html">Map</a></li>
                 </ul>
             </nav>
         </header>
 
-        <section id="features" class="features">
-            <h2>Why ArcaneConquest?</h2>
-            <p>Choose your hero, face powerful enemies, conquer bosses, and explore an immersive world filled with mystery and adventure!</p>
-
-            <div class="feature">
-                <h3>Diverse Character Selection</h3>
-                <p>Players can choose from a variety of unique characters, each equipped with distinct skills, strengths, and playstyles...</p>
+        <main>
+            <!-- Features Screen -->
+            <div class="game-title">
+                <h1>Game Features</h1>
+                <div class="title-decoration left"></div>
+                <div class="title-decoration right"></div>
             </div>
-
-            <div class="feature">
-                <h3>Immersive Story-Driven Gameplay</h3>
-                <p>Embark on a thrilling journey through multiple levels, each offering new challenges and adventures...</p>
+            
+            <!-- Game Description -->
+            <div class="game-description">
+                <div class="scroll-container">
+                    <div class="scroll-top"></div>
+                    <div class="scroll-content">
+                        <h2>Why ArcaneConquest?</h2>
+                        <p>Choose your hero, face powerful enemies, conquer bosses, and explore an immersive world filled with mystery and adventure!</p>
+                    </div>
+                    <div class="scroll-bottom"></div>
+                </div>
             </div>
-
-            <div class="feature">
-                <h3>Multiple Levels with Challenging Enemies and Epic Bosses</h3>
-                <p>Experience a wide array of levels, each uniquely designed with its own set of challenges, enemies, and environments...</p>
-            </div>
-
-            <div class="feature">
-                <h3>Interactive 2D Pixel Art Interface</h3>
-                <p>Navigate effortlessly through a beautifully crafted 2D pixel art interface. The intuitive UI design ensures easy access...</p>
-            </div>
-
-            <div class="feature">
-                <h3>Rich Exploration and Quests</h3>
-                <p>The world of "ArcaneConquest" is vast and brimming with treasures and lore to discover...</p>
-            </div>
-
-            <div class="feature">
-                <h3>Character Progression</h3>
-                <p>As players advance through the game, their characters will level up, allowing them to upgrade key stats...</p>
-            </div>
-        </section>
+            
+            <!-- Features as Skill Tree -->
+            <section class="feature-tree">
+                <div class="tree-container">
+                    <!-- Central Node -->
+                    <div class="tree-node central-node">
+                        <div class="node-icon central-icon"></div>
+                        <div class="node-content">
+                            <h3>ArcaneConquest</h3>
+                            <p>An epic adventure awaits</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Feature Nodes -->
+                    <div class="tree-branches">
+                        <div class="feature-node" data-feature="characters">
+                            <div class="node-connector"></div>
+                            <div class="node-icon character-icon"></div>
+                            <div class="node-content">
+                                <h3>Diverse Character Selection</h3>
+                                <div class="node-details">
+                                    <p>Players can choose from a variety of unique characters, each equipped with distinct skills, strengths, and playstyles. From mighty warriors to cunning rogues and powerful mages, there's a hero for every type of player.</p>
+                                    <ul class="feature-stats">
+                                        <li>12 Unique Characters</li>
+                                        <li>36 Special Abilities</li>
+                                        <li>4 Character Classes</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-node" data-feature="story">
+                            <div class="node-connector"></div>
+                            <div class="node-icon story-icon"></div>
+                            <div class="node-content">
+                                <h3>Immersive Story-Driven Gameplay</h3>
+                                <div class="node-details">
+                                    <p>Embark on a thrilling journey through multiple levels, each offering new challenges and adventures. The rich narrative unfolds as you progress, revealing the secrets of the ancient world and your character's destiny.</p>
+                                    <ul class="feature-stats">
+                                        <li>40+ Hours of Gameplay</li>
+                                        <li>Branching Story Paths</li>
+                                        <li>Multiple Endings</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-node" data-feature="levels">
+                            <div class="node-connector"></div>
+                            <div class="node-icon levels-icon"></div>
+                            <div class="node-content">
+                                <h3>Multiple Levels with Challenging Enemies</h3>
+                                <div class="node-details">
+                                    <p>Experience a wide array of levels, each uniquely designed with its own set of challenges, enemies, and environments. Face formidable bosses that will test your skills and strategy to the limit.</p>
+                                    <ul class="feature-stats">
+                                        <li>24 Unique Levels</li>
+                                        <li>8 Epic Boss Battles</li>
+                                        <li>50+ Enemy Types</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-node" data-feature="art">
+                            <div class="node-connector"></div>
+                            <div class="node-icon art-icon"></div>
+                            <div class="node-content">
+                                <h3>Interactive 2D Pixel Art Interface</h3>
+                                <div class="node-details">
+                                    <p>Navigate effortlessly through a beautifully crafted 2D pixel art interface. The intuitive UI design ensures easy access to all game features while immersing you in a nostalgic yet modern gaming experience.</p>
+                                    <ul class="feature-stats">
+                                        <li>Hand-Crafted Pixel Art</li>
+                                        <li>Fluid Animations</li>
+                                        <li>Dynamic Lighting Effects</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-node" data-feature="exploration">
+                            <div class="node-connector"></div>
+                            <div class="node-icon exploration-icon"></div>
+                            <div class="node-content">
+                                <h3>Rich Exploration and Quests</h3>
+                                <div class="node-details">
+                                    <p>The world of "ArcaneConquest" is vast and brimming with treasures and lore to discover. Embark on side quests, uncover hidden areas, and collect rare artifacts that enhance your understanding of the game world.</p>
+                                    <ul class="feature-stats">
+                                        <li>100+ Side Quests</li>
+                                        <li>30 Hidden Areas</li>
+                                        <li>200+ Collectible Items</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-node" data-feature="progression">
+                            <div class="node-connector"></div>
+                            <div class="node-icon progression-icon"></div>
+                            <div class="node-content">
+                                <h3>Character Progression</h3>
+                                <div class="node-details">
+                                    <p>As players advance through the game, their characters will level up, allowing them to upgrade key stats, unlock new abilities, and customize their playstyle. The deep progression system ensures that no two playthroughs are the same.</p>
+                                    <ul class="feature-stats">
+                                        <li>50 Experience Levels</li>
+                                        <li>3 Skill Trees per Character</li>
+                                        <li>Customizable Equipment</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Game Achievements -->
+            <section class="achievements">
+                <h2>Achievements</h2>
+                <div class="achievement-list">
+                    <div class="achievement">
+                        <div class="achievement-icon locked"></div>
+                        <div class="achievement-info">
+                            <h4>Master Adventurer</h4>
+                            <p>Complete all main story quests</p>
+                        </div>
+                    </div>
+                    <div class="achievement">
+                        <div class="achievement-icon locked"></div>
+                        <div class="achievement-info">
+                            <h4>Treasure Hunter</h4>
+                            <p>Find all hidden treasures</p>
+                        </div>
+                    </div>
+                    <div class="achievement">
+                        <div class="achievement-icon locked"></div>
+                        <div class="achievement-info">
+                            <h4>Boss Slayer</h4>
+                            <p>Defeat all bosses</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
 
         <footer>
-            <p>© 2024 ArcaneConquest. All rights reserved.</p>
+            <div class="footer-decorations left"></div>
+            <p>&copy; 2024 ArcaneConquest. All rights reserved.</p>
+            <div class="footer-decorations right"></div>
         </footer>
+    </div>
 
-    </body>
-</html>
+    <script src="feature.js"></script>
+</body>
+</html> 

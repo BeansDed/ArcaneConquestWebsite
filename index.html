@@ -5,15 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - ArcaneConquest</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=MedievalSharp&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
+    <div class="game-container">
+        <!-- Particle effects background -->
+        <div class="particles"></div>
+        
+        <!-- Header section with animated background -->
         <header>
             <img src="Header.gif" alt="Arcane Conquest Header" class="header-gif">
-            <img src="Logo.png" alt="Arcane Conquest Logo" class="logo"> <!-- Add your logo here -->
-            <nav>
+            <div class="logo-container">
+                <img src="Logo.png" alt="Arcane Conquest Logo" class="logo">
+            </div>
+            
+            <!-- Game-style navigation -->
+            <nav class="game-nav">
                 <ul>
-                    <li><a href="index.html">Home</a></li>
+                    <li class="active"><a href="index.html">Home</a></li>
                     <li><a href="feature.html">Features</a></li>
                     <li><a href="characters.html">Characters</a></li>
                     <li><a href="developer.html">Developers</a></li>
@@ -21,34 +30,96 @@
             </nav>
         </header>
 
-        <section class="banner">
-            <h2>Embark on Your Adventure!</h2>
-        </section>
+        <main>
+            <!-- Player stats bar -->
+            <div class="player-stats">
+                <div class="health-bar">
+                    <div class="health-label">HP</div>
+                    <div class="health-container">
+                        <div class="health-fill"></div>
+                    </div>
+                    <div class="health-text">100/100</div>
+                </div>
+                <div class="mana-bar">
+                    <div class="mana-label">MP</div>
+                    <div class="mana-container">
+                        <div class="mana-fill"></div>
+                    </div>
+                    <div class="mana-text">100/100</div>
+                </div>
+                <div class="xp-bar">
+                    <div class="xp-label">XP</div>
+                    <div class="xp-container">
+                        <div class="xp-fill"></div>
+                    </div>
+                    <div class="xp-text">Level 1</div>
+                </div>
+            </div>
 
-        <section class="home-boxes">
-            <div class="box">
-                <a href="feature.html">
-                    <h3>Features</h3>
-                    <p>Explore the unique features of Arcane Conquest!</p>
-                </a>
+            <!-- Quest banner -->
+            <section class="quest-banner">
+                <div class="quest-icon">!</div>
+                <h2>New Quest: Embark on Your Adventure!</h2>
+                <div class="quest-accept">Accept</div>
+            </section>
+
+            <!-- Feature cards as inventory items -->
+            <section class="inventory-grid">
+                <div class="inventory-item" data-rarity="legendary">
+                    <div class="item-glow"></div>
+                    <a href="feature.html">
+                        <div class="item-icon features-icon"></div>
+                        <h3>Features</h3>
+                        <p>Explore the unique features of Arcane Conquest!</p>
+                        <div class="item-stats">
+                            <span>+10 Knowledge</span>
+                            <span>+5 Excitement</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="inventory-item" data-rarity="rare">
+                    <div class="item-glow"></div>
+                    <a href="map.html">
+                        <div class="item-icon map-icon"></div>
+                        <h3>Map</h3>
+                        <p>Discover the vast world of Arcane Conquest!</p>
+                        <div class="item-stats">
+                            <span>+15 Navigation</span>
+                            <span>+8 Discovery</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="inventory-item" data-rarity="epic">
+                    <div class="item-glow"></div>
+                    <a href="characters.html">
+                        <div class="item-icon characters-icon"></div>
+                        <h3>Characters</h3>
+                        <p>Meet the heroes of Arcane Conquest!</p>
+                        <div class="item-stats">
+                            <span>+12 Charisma</span>
+                            <span>+9 Lore</span>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Game dialog box -->
+            <div class="dialog-box">
+                <div class="dialog-portrait"></div>
+                <div class="dialog-content">
+                    <p class="dialog-text">Welcome, adventurer! Click on an item in your inventory to begin your journey through the world of Arcane Conquest.</p>
+                    <div class="dialog-next">▼</div>
+                </div>
             </div>
-            <div class="box">
-                <a href="map.html">
-                    <h3>Map</h3>
-                    <p>Discover the vast world of Arcane Conquest!</p>
-                </a>
-            </div>
-            <div class="box">
-                <a href="characters.html">
-                    <h3>Characters</h3>
-                    <p>Meet the heroes of Arcane Conquest!</p>
-                </a>
-            </div>
-        </section>
+        </main>
 
         <footer>
+            <div class="footer-decorations left"></div>
             <p>&copy; 2024 ArcaneConquest. All rights reserved.</p>
+            <div class="footer-decorations right"></div>
         </footer>
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>

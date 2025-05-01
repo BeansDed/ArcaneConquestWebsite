@@ -4,55 +4,298 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Characters - ArcaneConquest</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=EB+Garamond&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="character.css">
 </head>
 <body>
-    <div class="container">
+    <div class="game-container">
+        <!-- Particle effects background -->
+        <div class="particles"></div>
+        
+        <!-- Game UI Header -->
         <header>
-            <h1>ArcaneConquest Characters</h1>
-            <nav>
+            <div class="header-overlay"></div>
+            <div class="logo-container">
+                <img src="Logo.png" alt="Arcane Conquest Logo" class="logo">
+            </div>
+            
+            <!-- Game HUD -->
+            <div class="game-hud">
+                <div class="player-level">
+                    <div class="level-icon">Lv.5</div>
+                    <div class="player-name">Adventurer</div>
+                </div>
+                <div class="resource-bars">
+                    <div class="health-bar">
+                        <div class="bar-label">HP</div>
+                        <div class="bar-container">
+                            <div class="bar-fill health-fill"></div>
+                        </div>
+                        <div class="bar-value">85/100</div>
+                    </div>
+                    <div class="mana-bar">
+                        <div class="bar-label">MP</div>
+                        <div class="bar-container">
+                            <div class="bar-fill mana-fill"></div>
+                        </div>
+                        <div class="bar-value">75/100</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Game Navigation - Keeping exactly as requested -->
+            <nav class="game-nav">
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="feature.html">Features</a></li>
-                    <li><a href="characters.html">Characters</a></li>
+                    <li class="active"><a href="characters.html">Characters</a></li>
+                    <li><a href="map.html">Map</a></li>
                 </ul>
             </nav>
         </header>
 
-        <!-- Characters Section -->
-        <section class="characters">
-            <div class="character-panel">
-                <h3>Meet the Heroes</h3>
-                <div class="character-list">
-                    <div class="character">
-                        <img src="Portrait.png" alt="Hero 1">
-                        <div class="character-description">
-                            <h4>Hero 1</h4>
-                            <p>A brave warrior skilled in swordsmanship and defense.</p>
+        <main>
+            <!-- Character Selection Screen -->
+            <div class="game-title">
+                <h1>Character Selection</h1>
+                <div class="title-decoration left"></div>
+                <div class="title-decoration right"></div>
+            </div>
+            
+            <!-- Character Selection UI -->
+            <section class="character-selection">
+                <div class="selection-window">
+                    <!-- Character Slots -->
+                    <div class="character-slots">
+                        <div class="character-slot active" data-character="warrior">
+                            <div class="character-portrait">
+                                <img src="Portrait.png" alt="Warrior" class="portrait-img">
+                                <div class="portrait-frame"></div>
+                                <div class="selection-indicator"></div>
+                            </div>
+                            <div class="character-name">Thorne</div>
+                            <div class="character-class">Warrior</div>
+                        </div>
+                        
+                        <div class="character-slot" data-character="archer">
+                            <div class="character-portrait">
+                                <img src="hero2.jpg" alt="Archer" class="portrait-img">
+                                <div class="portrait-frame"></div>
+                                <div class="selection-indicator"></div>
+                            </div>
+                            <div class="character-name">Lyra</div>
+                            <div class="character-class">Archer</div>
+                        </div>
+                        
+                        <div class="character-slot" data-character="mage">
+                            <div class="character-portrait">
+                                <img src="hero3.jpg" alt="Mage" class="portrait-img">
+                                <div class="portrait-frame"></div>
+                                <div class="selection-indicator"></div>
+                            </div>
+                            <div class="character-name">Azura</div>
+                            <div class="character-class">Mage</div>
                         </div>
                     </div>
-                    <div class="character">
-                        <img src="hero2.jpg" alt="Hero 2">
-                        <div class="character-description">
-                            <h4>Hero 2</h4>
-                            <p>An agile archer with unmatched precision and speed.</p>
+                    
+                    <!-- Character Details Panel -->
+                    <div class="character-details">
+                        <div class="character-info" id="warrior-info">
+                            <h2 class="character-title">Thorne the Valiant</h2>
+                            <div class="character-lore">
+                                <p>A stalwart defender of the realm, Thorne has mastered the arts of swordsmanship and defensive tactics. Born to a lineage of royal guards, his unwavering loyalty and courage have earned him legendary status among the kingdom's warriors.</p>
+                            </div>
+                            
+                            <!-- Character Stats -->
+                            <div class="character-stats">
+                                <div class="stat-group">
+                                    <div class="stat">
+                                        <div class="stat-label">Strength</div>
+                                        <div class="stat-bar">
+                                            <div class="stat-fill" style="width: 85%"></div>
+                                        </div>
+                                        <div class="stat-value">85</div>
+                                    </div>
+                                    <div class="stat">
+                                        <div class="stat-label">Agility</div>
+                                        <div class="stat-bar">
+                                            <div class="stat-fill" style="width: 60%"></div>
+                                        </div>
+                                        <div class="stat-value">60</div>
+                                    </div>
+                                    <div class="stat">
+                                        <div class="stat-label">Intelligence</div>
+                                        <div class="stat-bar">
+                                            <div class="stat-fill" style="width: 45%"></div>
+                                        </div>
+                                        <div class="stat-value">45</div>
+                                    </div>
+                                    <div class="stat">
+                                        <div class="stat-label">Endurance</div>
+                                        <div class="stat-bar">
+                                            <div class="stat-fill" style="width: 90%"></div>
+                                        </div>
+                                        <div class="stat-value">90</div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Special Abilities -->
+                                <div class="abilities">
+                                    <h3>Special Abilities</h3>
+                                    <div class="ability">
+                                        <div class="ability-icon shield"></div>
+                                        <div class="ability-info">
+                                            <div class="ability-name">Shield Wall</div>
+                                            <div class="ability-desc">Reduces incoming damage by 50% for 10 seconds</div>
+                                        </div>
+                                    </div>
+                                    <div class="ability">
+                                        <div class="ability-icon sword"></div>
+                                        <div class="ability-info">
+                                            <div class="ability-name">Whirlwind Strike</div>
+                                            <div class="ability-desc">Deals heavy damage to all surrounding enemies</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="character">
-                        <img src="hero3.jpg" alt="Hero 3">
-                        <div class="character-description">
-                            <h4>Hero 3</h4>
-                            <p>A powerful mage wielding the forces of magic.</p>
+                        
+                        <div class="character-info hidden" id="archer-info">
+                            <h2 class="character-title">Lyra the Swift</h2>
+                            <div class="character-lore">
+                                <p>Raised in the ancient forests of Silvermere, Lyra's connection with nature has granted her unparalleled precision with the bow. Her arrows are said to find their mark even in the darkest of nights, guided by an almost supernatural intuition.</p>
+                            </div>
+                            
+                            <!-- Character Stats -->
+                            <div class="character-stats">
+                                <div class="stat-group">
+                                    <div class="stat">
+                                        <div class="stat-label">Strength</div>
+                                        <div class="stat-bar">
+                                            <div class="stat-fill" style="width: 55%"></div>
+                                        </div>
+                                        <div class="stat-value">55</div>
+                                    </div>
+                                    <div class="stat">
+                                        <div class="stat-label">Agility</div>
+                                        <div class="stat-bar">
+                                            <div class="stat-fill" style="width: 95%"></div>
+                                        </div>
+                                        <div class="stat-value">95</div>
+                                    </div>
+                                    <div class="stat">
+                                        <div class="stat-label">Intelligence</div>
+                                        <div class="stat-bar">
+                                            <div class="stat-fill" style="width: 70%"></div>
+                                        </div>
+                                        <div class="stat-value">70</div>
+                                    </div>
+                                    <div class="stat">
+                                        <div class="stat-label">Endurance</div>
+                                        <div class="stat-bar">
+                                            <div class="stat-fill" style="width: 60%"></div>
+                                        </div>
+                                        <div class="stat-value">60</div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Special Abilities -->
+                                <div class="abilities">
+                                    <h3>Special Abilities</h3>
+                                    <div class="ability">
+                                        <div class="ability-icon bow"></div>
+                                        <div class="ability-info">
+                                            <div class="ability-name">Piercing Shot</div>
+                                            <div class="ability-desc">Arrow penetrates through multiple targets</div>
+                                        </div>
+                                    </div>
+                                    <div class="ability">
+                                        <div class="ability-icon trap"></div>
+                                        <div class="ability-info">
+                                            <div class="ability-name">Hunter's Trap</div>
+                                            <div class="ability-desc">Sets a trap that immobilizes enemies</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="character-info hidden" id="mage-info">
+                            <h2 class="character-title">Azura the Arcane</h2>
+                            <div class="character-lore">
+                                <p>A prodigy of the Arcane Academy, Azura's mastery of elemental magic is unrivaled in the known realms. Descended from an ancient line of spellweavers, she seeks to uncover forgotten knowledge and harness the deepest secrets of arcane power.</p>
+                            </div>
+                            
+                            <!-- Character Stats -->
+                            <div class="character-stats">
+                                <div class="stat-group">
+                                    <div class="stat">
+                                        <div class="stat-label">Strength</div>
+                                        <div class="stat-bar">
+                                            <div class="stat-fill" style="width: 30%"></div>
+                                        </div>
+                                        <div class="stat-value">30</div>
+                                    </div>
+                                    <div class="stat">
+                                        <div class="stat-label">Agility</div>
+                                        <div class="stat-bar">
+                                            <div class="stat-fill" style="width: 50%"></div>
+                                        </div>
+                                        <div class="stat-value">50</div>
+                                    </div>
+                                    <div class="stat">
+                                        <div class="stat-label">Intelligence</div>
+                                        <div class="stat-bar">
+                                            <div class="stat-fill" style="width: 95%"></div>
+                                        </div>
+                                        <div class="stat-value">95</div>
+                                    </div>
+                                    <div class="stat">
+                                        <div class="stat-label">Endurance</div>
+                                        <div class="stat-bar">
+                                            <div class="stat-fill" style="width: 40%"></div>
+                                        </div>
+                                        <div class="stat-value">40</div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Special Abilities -->
+                                <div class="abilities">
+                                    <h3>Special Abilities</h3>
+                                    <div class="ability">
+                                        <div class="ability-icon fireball"></div>
+                                        <div class="ability-info">
+                                            <div class="ability-name">Arcane Explosion</div>
+                                            <div class="ability-desc">Unleashes a devastating blast of magical energy</div>
+                                        </div>
+                                    </div>
+                                    <div class="ability">
+                                        <div class="ability-icon portal"></div>
+                                        <div class="ability-info">
+                                            <div class="ability-name">Dimensional Shift</div>
+                                            <div class="ability-desc">Teleports to a nearby location, avoiding damage</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Character Selection Button -->
+                        <div class="select-button">
+                            <button class="game-button">Select Character</button>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </main>
 
         <footer>
+            <div class="footer-decorations left"></div>
             <p>&copy; 2024 ArcaneConquest. All rights reserved.</p>
+            <div class="footer-decorations right"></div>
         </footer>
     </div>
+
+    <script src="characters.js"></script>
 </body>
 </html>

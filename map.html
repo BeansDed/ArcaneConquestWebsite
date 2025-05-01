@@ -3,84 +3,378 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Map - Arcane Conquest</title>
+    <title>World Map - ArcaneConquest</title>
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="map.css">
 </head>
 <body>
-    <div class="container">
+    <div class="game-container">
+        <!-- Particle effects background -->
+        <div class="particles"></div>
+        
+        <!-- Game UI Header -->
         <header>
-            <h1>Arcane Conquest Map</h1>
-            <nav>
+            <div class="header-overlay"></div>
+            <div class="logo-container">
+                <img src="Logo.png" alt="Arcane Conquest Logo" class="logo">
+            </div>
+            
+            <!-- Game HUD -->
+            <div class="game-hud">
+                <div class="player-level">
+                    <div class="level-icon">Lv.5</div>
+                    <div class="player-name">Adventurer</div>
+                </div>
+                <div class="resource-bars">
+                    <div class="health-bar">
+                        <div class="bar-label">HP</div>
+                        <div class="bar-container">
+                            <div class="bar-fill health-fill"></div>
+                        </div>
+                        <div class="bar-value">85/100</div>
+                    </div>
+                    <div class="mana-bar">
+                        <div class="bar-label">MP</div>
+                        <div class="bar-container">
+                            <div class="bar-fill mana-fill"></div>
+                        </div>
+                        <div class="bar-value">75/100</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Game Navigation -->
+            <nav class="game-nav">
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="feature.html">Features</a></li>
                     <li><a href="characters.html">Characters</a></li>
-                    <li><a href="map.html">Map</a></li>
+                    <li class="active"><a href="map.html">Map</a></li>
                 </ul>
             </nav>
         </header>
 
-        <section class="map-section">
-            <h2>Explore the World of Arcane Conquest!</h2>
-            <div class="map-container">
-                <img src="Map.png" alt="Map of Arcane Conquest" usemap="#mapareas" class="map-image">
-                <map name="mapareas">
-                    <area shape="rect" coords="34,44,270,350" alt="Forest" href="forest.html">
-                    <area shape="rect" coords="290,172,333,250" alt="Dark Forest" href="dark-forest.html">
-                    <area shape="rect" coords="337,300,500,450" alt="Dungeon" href="dungeon.html">
-                    <area shape="rect" coords="50,300,150,400" alt="Castle" href="castle.html">
-                </map>
-            </div>
-            <p>Click on different areas of the map to learn more about each location!</p>
-        </section>
-
-        <!-- New section for buttons -->
-        <div class="map-buttons">
-            <div class="map-btn-container">
-                <div class="map-btn">
-                    <img src="LobbyMapButton.png" alt="Forest Icon">
-                </div>
-                <div class="map-info">
-                    <h3>Adventurer's Rest</h3>
-                    <p></p>
-                </div>
+        <main>
+            <!-- Map Screen -->
+            <div class="game-title">
+                <h1>World Map</h1>
+                <div class="title-decoration left"></div>
+                <div class="title-decoration right"></div>
             </div>
             
-            <div class="map-btn-container">
-                <div class="map-btn">
-                    <img src="Forest.png" alt="Dark Forest Icon">
+            <!-- Map Interface -->
+            <section class="map-interface">
+                <div class="map-sidebar">
+                    <div class="map-legend">
+                        <h3>Legend</h3>
+                        <ul class="legend-items">
+                            <li>
+                                <div class="legend-icon town"></div>
+                                <span>Towns</span>
+                            </li>
+                            <li>
+                                <div class="legend-icon dungeon"></div>
+                                <span>Dungeons</span>
+                            </li>
+                            <li>
+                                <div class="legend-icon forest"></div>
+                                <span>Forests</span>
+                            </li>
+                            <li>
+                                <div class="legend-icon castle"></div>
+                                <span>Castles</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="map-controls">
+                        <h3>Controls</h3>
+                        <div class="control-buttons">
+                            <button class="control-btn zoom-in">+</button>
+                            <button class="control-btn zoom-out">-</button>
+                            <button class="control-btn reset">Reset</button>
+                        </div>
+                    </div>
+                    
+                    <div class="quest-log">
+                        <h3>Active Quests</h3>
+                        <ul class="quest-items">
+                            <li class="quest-item">
+                                <div class="quest-icon main"></div>
+                                <div class="quest-info">
+                                    <h4>The Lost Artifact</h4>
+                                    <p>Find the ancient relic in Drakefall Keep</p>
+                                </div>
+                            </li>
+                            <li class="quest-item">
+                                <div class="quest-icon side"></div>
+                                <div class="quest-info">
+                                    <h4>Forest Spirits</h4>
+                                    <p>Help the spirits in Greenleaf Grove</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="map-info">
-                    <h3>Greenleaf Grove</h3>
-                    <p></p>
+                
+                <div class="map-container">
+                    <div class="map-frame">
+                        <div class="map-scroll">
+                            <div class="map-wrapper">
+                                <img src="Map.png" alt="Map of Arcane Conquest" class="map-image">
+                                
+                                <!-- Map Markers -->
+                                <div class="map-markers">
+                                    <div class="map-marker" data-location="adventurers-rest" style="top: 25%; left: 20%;">
+                                        <div class="marker-icon town-marker"></div>
+                                        <div class="marker-pulse"></div>
+                                        <div class="marker-tooltip">
+                                            <h4>Adventurer's Rest</h4>
+                                            <p>Starting town with shops and quests</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="map-marker" data-location="greenleaf-grove" style="top: 40%; left: 35%;">
+                                        <div class="marker-icon forest-marker"></div>
+                                        <div class="marker-pulse"></div>
+                                        <div class="marker-tooltip">
+                                            <h4>Greenleaf Grove</h4>
+                                            <p>Ancient forest with magical creatures</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="map-marker" data-location="shadowmire" style="top: 30%; left: 65%;">
+                                        <div class="marker-icon forest-marker dark"></div>
+                                        <div class="marker-pulse"></div>
+                                        <div class="marker-tooltip">
+                                            <h4>Shadowmire</h4>
+                                            <p>Dark forest filled with dangerous enemies</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="map-marker" data-location="drakefall-keep" style="top: 60%; left: 75%;">
+                                        <div class="marker-icon dungeon-marker"></div>
+                                        <div class="marker-pulse"></div>
+                                        <div class="marker-tooltip">
+                                            <h4>Drakefall Keep</h4>
+                                            <p>Ancient dungeon with powerful bosses</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="map-marker" data-location="crystal-peaks" style="top: 15%; left: 80%;">
+                                        <div class="marker-icon mountain-marker"></div>
+                                        <div class="marker-pulse"></div>
+                                        <div class="marker-tooltip">
+                                            <h4>Crystal Peaks</h4>
+                                            <p>Treacherous mountains with rare treasures</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="map-marker" data-location="kings-haven" style="top: 70%; left: 25%;">
+                                        <div class="marker-icon castle-marker"></div>
+                                        <div class="marker-pulse"></div>
+                                        <div class="marker-tooltip">
+                                            <h4>King's Haven</h4>
+                                            <p>Royal castle and final quest location</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        
-            <div class="map-btn-container">
-                <div class="map-btn">
-                    <img src="DarkForestButton.png" alt="Dungeon Icon">
-                </div>
-                <div class="map-info">
-                    <h3>Shadowmire</h3>
-                    <p></p>
-                </div>
-            </div>
+            </section>
             
-            <div class="map-btn-container">
-                <div class="map-btn">
-                    <img src="Dungeon Button.png" alt="Castle Icon">
+            <!-- Location Details -->
+            <section class="location-details">
+                <h2>Location Details</h2>
+                
+                <div class="location-tabs">
+                    <button class="tab-btn active" data-tab="adventurers-rest">Adventurer's Rest</button>
+                    <button class="tab-btn" data-tab="greenleaf-grove">Greenleaf Grove</button>
+                    <button class="tab-btn" data-tab="shadowmire">Shadowmire</button>
+                    <button class="tab-btn" data-tab="drakefall-keep">Drakefall Keep</button>
                 </div>
-                <div class="map-info">
-                    <h3>Drakefall Keep</h3>
-                    <p></p>
+                
+                <div class="location-content">
+                    <div class="location-tab active" id="adventurers-rest">
+                        <div class="location-card">
+                            <div class="location-image">
+                                <img src="LobbyMapButton.png" alt="Adventurer's Rest">
+                            </div>
+                            <div class="location-info">
+                                <h3>Adventurer's Rest</h3>
+                                <div class="location-stats">
+                                    <div class="stat">
+                                        <span class="stat-label">Level Range:</span>
+                                        <span class="stat-value">1-5</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-label">Danger:</span>
+                                        <div class="danger-meter">
+                                            <div class="danger-fill" style="width: 20%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-label">Quests:</span>
+                                        <span class="stat-value">8</span>
+                                    </div>
+                                </div>
+                                <p class="location-desc">A peaceful town where adventurers gather to rest, trade, and find new quests. The town features various shops, an inn, and a guild hall where you can learn new skills and abilities.</p>
+                                <div class="location-features">
+                                    <div class="feature">
+                                        <div class="feature-icon shop"></div>
+                                        <span>Shops</span>
+                                    </div>
+                                    <div class="feature">
+                                        <div class="feature-icon inn"></div>
+                                        <span>Inn</span>
+                                    </div>
+                                    <div class="feature">
+                                        <div class="feature-icon guild"></div>
+                                        <span>Guild</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="location-tab" id="greenleaf-grove">
+                        <div class="location-card">
+                            <div class="location-image">
+                                <img src="Forest.png" alt="Greenleaf Grove">
+                            </div>
+                            <div class="location-info">
+                                <h3>Greenleaf Grove</h3>
+                                <div class="location-stats">
+                                    <div class="stat">
+                                        <span class="stat-label">Level Range:</span>
+                                        <span class="stat-value">5-15</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-label">Danger:</span>
+                                        <div class="danger-meter">
+                                            <div class="danger-fill" style="width: 40%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-label">Quests:</span>
+                                        <span class="stat-value">12</span>
+                                    </div>
+                                </div>
+                                <p class="location-desc">An ancient forest teeming with magical creatures and hidden treasures. The forest spirits are said to grant special powers to those who help them. Beware of the forest guardians who protect the sacred groves.</p>
+                                <div class="location-features">
+                                    <div class="feature">
+                                        <div class="feature-icon creatures"></div>
+                                        <span>Magical Creatures</span>
+                                    </div>
+                                    <div class="feature">
+                                        <div class="feature-icon treasure"></div>
+                                        <span>Hidden Treasures</span>
+                                    </div>
+                                    <div class="feature">
+                                        <div class="feature-icon boss"></div>
+                                        <span>Forest Guardian</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="location-tab" id="shadowmire">
+                        <div class="location-card">
+                            <div class="location-image">
+                                <img src="DarkForestButton.png" alt="Shadowmire">
+                            </div>
+                            <div class="location-info">
+                                <h3>Shadowmire</h3>
+                                <div class="location-stats">
+                                    <div class="stat">
+                                        <span class="stat-label">Level Range:</span>
+                                        <span class="stat-value">15-25</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-label">Danger:</span>
+                                        <div class="danger-meter">
+                                            <div class="danger-fill" style="width: 75%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-label">Quests:</span>
+                                        <span class="stat-value">10</span>
+                                    </div>
+                                </div>
+                                <p class="location-desc">A dark and foreboding forest where the sun's light barely penetrates the thick canopy. Home to corrupted creatures and dark magic, only experienced adventurers should venture here. The rewards, however, are worth the risk.</p>
+                                <div class="location-features">
+                                    <div class="feature">
+                                        <div class="feature-icon undead"></div>
+                                        <span>Undead</span>
+                                    </div>
+                                    <div class="feature">
+                                        <div class="feature-icon dark-magic"></div>
+                                        <span>Dark Magic</span>
+                                    </div>
+                                    <div class="feature">
+                                        <div class="feature-icon rare-loot"></div>
+                                        <span>Rare Loot</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="location-tab" id="drakefall-keep">
+                        <div class="location-card">
+                            <div class="location-image">
+                                <img src="Dungeon Button.png" alt="Drakefall Keep">
+                            </div>
+                            <div class="location-info">
+                                <h3>Drakefall Keep</h3>
+                                <div class="location-stats">
+                                    <div class="stat">
+                                        <span class="stat-label">Level Range:</span>
+                                        <span class="stat-value">25-40</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-label">Danger:</span>
+                                        <div class="danger-meter">
+                                            <div class="danger-fill" style="width: 95%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-label">Quests:</span>
+                                        <span class="stat-value">6</span>
+                                    </div>
+                                </div>
+                                <p class="location-desc">An ancient dungeon built into the side of a mountain, once home to powerful dragons. Now filled with traps, monsters, and powerful bosses. The legendary artifacts hidden within are sought by adventurers from across the realm.</p>
+                                <div class="location-features">
+                                    <div class="feature">
+                                        <div class="feature-icon traps"></div>
+                                        <span>Deadly Traps</span>
+                                    </div>
+                                    <div class="feature">
+                                        <div class="feature-icon dragon"></div>
+                                        <span>Dragon Boss</span>
+                                    </div>
+                                    <div class="feature">
+                                        <div class="feature-icon artifact"></div>
+                                        <span>Legendary Artifacts</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-        
+            </section>
+        </main>
 
         <footer>
-            <p>&copy; 2024 Arcane Conquest. All rights reserved.</p>
+            <div class="footer-decorations left"></div>
+            <p>&copy; 2024 ArcaneConquest. All rights reserved.</p>
+            <div class="footer-decorations right"></div>
         </footer>
     </div>
+
+    <script src="map.js"></script>
 </body>
 </html>
